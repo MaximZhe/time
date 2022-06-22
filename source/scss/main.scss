@@ -69,6 +69,13 @@ $cl4:#375465;
 $cl5:#FF800B;
 $cl6:#FDB827;
 /*Шаблоны */
+%titleTinersBlock{
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    color:#ffffff;
+    font-size: 20px; 
+}
 
 .timer{
     display:flex;
@@ -129,6 +136,44 @@ $cl6:#FDB827;
         }
     }
 
+}
+.timers{
+    display: flex;
+    max-width: 320px;
+    width: 100%;
+    justify-content: space-between;
+    margin: 80px auto 0;
+    .timers__block{
+        position: relative;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        span{
+            font-size: 24px;
+            line-height: 28px;
+            font-weight: 700;
+        }
+        &:nth-child(1):before{
+            content:"Дней";
+            @extend %titleTinersBlock;
+                   
+        }
+        &:nth-child(2):before{
+            content:"Часов";
+            @extend %titleTinersBlock;
+                   
+        }
+        &:nth-child(3):before{
+            content:"Минут";
+            @extend %titleTinersBlock;
+                   
+        }
+        &:nth-child(4):before{
+            content:"Секунд";
+            @extend %titleTinersBlock;
+                   
+        }
+    }
 }
 
 /*Responsive*/
