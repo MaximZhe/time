@@ -41,5 +41,19 @@ setInterval (() => {
     sDot.style.transform =`rotate(${sec * 6}deg)`;
 });
 
+//Timers
+
+let d = document.querySelector("#d");
+let h = document.querySelector("#h");
+let m = document.querySelector("#m");
+let s = document.querySelector("#s");
+
+
+d.insertAdjacentHTML("beforeend",`<span>0</span> <span>0</span>`);
+h.insertAdjacentHTML("beforeend",`<span>0</span> <span>0</span>`);
+m.insertAdjacentHTML("beforeend",`<span>0</span> <span>0</span>`);
+s.insertAdjacentHTML("beforeend",`<span>0</span> <span>0</span>`);
+
+console.log(d)
 
 
