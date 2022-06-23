@@ -108,6 +108,8 @@ textarea {
 		bottom: -40px;
 		color: #ffffff;
 		font-size: 20px;
+		width: 100%;
+		text-align: center;
 }
 
 .timer {

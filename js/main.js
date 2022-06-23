@@ -43,17 +43,44 @@ setInterval (() => {
 
 //Timers
 
+let date = new Date();
+date = date.setDate(date.getDate() + 2);
 let d = document.querySelector("#d");
 let h = document.querySelector("#h");
 let m = document.querySelector("#m");
 let s = document.querySelector("#s");
 
+function couts() {
+    let now = new Date();
+    let news = date - now;
+    let day = Math.floor(news / 1000 / 60 /60 / 24);
+    day = day.toString().split("");
+    let hor = Math.floor(news / 1000 / 60 /60 ) % 24;
+    hor = hor.toString().split("");
+    let mi = Math.floor(news / 1000 / 60) % 60;
+    mi = mi.toString().split("");
+    let se = Math.floor(news / 1000) % 60;
+    se = se.toString().split("");
 
-d.insertAdjacentHTML("beforeend",`<span>0</span> <span>0</span>`);
-h.insertAdjacentHTML("beforeend",`<span>0</span> <span>0</span>`);
-m.insertAdjacentHTML("beforeend",`<span>0</span> <span>0</span>`);
-s.insertAdjacentHTML("beforeend",`<span>0</span> <span>0</span>`);
+    function Zero (num){
+        if(num.length < 2){
+            num[1] = num[0];
+            num[0] = 0;
+            return `<span>${num[0]}</span> <span>${num[1]}</span>`
+        }else{
+            return `<span>${num[0]}</span> <span>${num[1]}</span>`
+        }
+    }
+    d.innerHTML = Zero(day);
+    h.innerHTML = Zero(hor);
+    m.innerHTML = Zero(mi);
+    s.innerHTML = Zero(se);
+}
 
-console.log(d)
+couts ();
+
+setInterval(couts, 1000);
+
+
 
 
