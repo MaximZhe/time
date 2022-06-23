@@ -88,6 +88,7 @@ $cl6:#FDB827;
     display: flex;
     align-items:center;
     justify-content: center;
+    
 }
 .timer{
     display:flex;
@@ -149,6 +150,7 @@ $cl6:#FDB827;
     }
 
 }
+
 .timers{
     display: flex;
     flex-direction: column;
@@ -156,10 +158,17 @@ $cl6:#FDB827;
     width: 100%;
     justify-content: space-between;
     margin: 80px auto 0;
+    .timers__head{
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+    }
     .timers__info{
         display: none;
         font-size: 20px;
         line-height: 24px;
+        text-align: center;
+        margin-top: 15px;
     }
     .time{
         display: flex;
@@ -198,6 +207,8 @@ $cl6:#FDB827;
             span{
                 @extend %boxTimer;
                 border:2px solid #ffffff;
+                position: relative;
+                
             }
         }
         #h{
@@ -220,6 +231,14 @@ $cl6:#FDB827;
         } 
     }
     
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        tranform: rotate(360deg);
+    }
 }
 
 /*Responsive*/

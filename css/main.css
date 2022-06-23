@@ -222,10 +222,17 @@ textarea {
 		        justify-content: space-between;
 		margin: 80px auto 0;
 }
+.timers .timers__head {
+		font-size: 24px;
+		line-height: 28px;
+		text-align: center;
+}
 .timers .timers__info {
 		display: none;
 		font-size: 20px;
 		line-height: 24px;
+		text-align: center;
+		margin-top: 15px;
 }
 .timers .time {
 		display: -webkit-box;
@@ -265,6 +272,7 @@ textarea {
 }
 .timers .time #d span {
 		border: 2px solid #ffffff;
+		position: relative;
 }
 .timers .time #h span {
 		border: 2px solid #e5ff00;
@@ -276,6 +284,25 @@ textarea {
 		border: 2px solid #fd0000;
 }
 
+@-webkit-keyframes animate {
+		0% {
+				-webkit-transform: rotate(0deg);
+				        transform: rotate(0deg);
+		}
+		100% {
+				tranform: rotate(360deg);
+		}
+}
+
+@keyframes animate {
+		0% {
+				-webkit-transform: rotate(0deg);
+				        transform: rotate(0deg);
+		}
+		100% {
+				tranform: rotate(360deg);
+		}
+}
 /*Responsive*/
 /* ExtraLarge: 1200px - 1400px */
 /* Large: 992px - 1199px */

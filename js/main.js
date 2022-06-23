@@ -43,16 +43,16 @@ setInterval (() => {
 
 //Timers
 
-let dateNewAction = 5;
-let dateAction = new Date();
-dateAction = dateAction.setDate(dateAction.getDate()+ 1); // Указываем сколько дней будет идти акция
+
+let dateAction = new Date()
+dateAction = dateAction.setDate(dateAction.getDate()+ 3);// Указываем сколько дней будет идти акция
 
 
 let d1 = document.querySelector("#d");
 let h1 = document.querySelector("#h");
 let m1 = document.querySelector("#m");
 let s1 = document.querySelector("#s");
-let timers = document.querySelector(".timers");
+let timers = document.querySelector(".timers__info");
 
 // Рекурсивный способ вызова
 let start = setTimeout( function couts () {
@@ -80,6 +80,7 @@ let start = setTimeout( function couts () {
         }else if (news< 0){
             num[0] = 0;
             num[1] = 0;
+            timers.style.display = "block";
             return `<span>${num[0]}</span> <span>${num[1]}</span>`;
         }else{
             return `<span>${num[0]}</span> <span>${num[1]}</span>`;
