@@ -231,7 +231,7 @@ textarea {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		max-width: 320px;
+		max-width: 300px;
 		width: 100%;
 		-webkit-box-pack: justify;
 		    -ms-flex-pack: justify;
@@ -249,7 +249,7 @@ textarea {
 		-webkit-box-pack: justify;
 		    -ms-flex-pack: justify;
 		        justify-content: space-between;
-		width: 70px;
+		width: 68px;
 }
 .timers .time .timers__block:nth-child(1):before {
 		content: "Дней";
@@ -282,4 +282,18 @@ textarea {
 /* Medium: 768px - 991px */
 /* Small: 576px - 767px  */
 /* Extra small: 0px (320px) - 576px */
+@media (max-width: 575px) {
+		.timer {
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				    -ms-flex-direction: column;
+				        flex-direction: column;
+		}
+		.timer .circle {
+				margin-top: 20px;
+		}
+		.timer .circle:nth-child(1) {
+				margin-top: 0;
+		}
+}
 /* Extra small: 0px (320px) - 480px */

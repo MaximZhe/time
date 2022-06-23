@@ -163,7 +163,7 @@ $cl6:#FDB827;
     }
     .time{
         display: flex;
-        max-width: 320px;
+        max-width: 300px;
         width: 100%;
         justify-content: space-between;
         margin: 20px auto 0;
@@ -172,7 +172,7 @@ $cl6:#FDB827;
         display: flex;
         align-items:center;
         justify-content: space-between;
-        width: 70px;
+        width: 68px;
         &:nth-child(1):before{
             content:"Дней";
             @extend %titleTinersBlock;
@@ -248,6 +248,15 @@ $cl6:#FDB827;
 
 /* Extra small: 0px (320px) - 576px */
 @media (max-width: 575px){
+ .timer{
+    flex-direction: column;
+    .circle{
+        margin-top: 20px;
+    }
+    .circle:nth-child(1){
+        margin-top: 0;
+    }
+ }   
    
 }
 /* Extra small: 0px (320px) - 480px */
