@@ -43,43 +43,59 @@ setInterval (() => {
 
 //Timers
 
-let date = new Date();
-date = date.setDate(date.getDate() + 2);
-let d = document.querySelector("#d");
-let h = document.querySelector("#h");
-let m = document.querySelector("#m");
-let s = document.querySelector("#s");
+let dateNewAction = 5;
+let dateAction = new Date();
+dateAction = dateAction.setDate(dateAction.getDate()+ 1); // Указываем сколько дней будет идти акция
 
-function couts() {
-    let now = new Date();
-    let news = date - now;
-    let day = Math.floor(news / 1000 / 60 /60 / 24);
+
+let d1 = document.querySelector("#d");
+let h1 = document.querySelector("#h");
+let m1 = document.querySelector("#m");
+let s1 = document.querySelector("#s");
+let timers = document.querySelector(".timers");
+
+// Рекурсивный способ вызова
+let start = setTimeout( function couts () {
+    let now = new Date(); // Дата которая сегодня
+    let news = dateAction - now; // Разница в миллисекундах между актуальной датой и датой окончания акции
+    
+    
+    let day = Math.floor(news / 1000 / 60 /60 / 24); // Остаток дней
     day = day.toString().split("");
-    let hor = Math.floor(news / 1000 / 60 /60 ) % 24;
+    let hor = Math.floor(news / 1000 / 60 /60 ) % 24; // Остаток часов
     hor = hor.toString().split("");
-    let mi = Math.floor(news / 1000 / 60) % 60;
+    let mi = Math.floor(news / 1000 / 60) % 60; // Лстаток минут
     mi = mi.toString().split("");
-    let se = Math.floor(news / 1000) % 60;
+    let se = Math.floor(news / 1000) % 60; // Остаток секунд
     se = se.toString().split("");
-
+    
+    
+   
+    //Функция подставляющая значение 0 если значение меньше 10
     function Zero (num){
         if(num.length < 2){
             num[1] = num[0];
             num[0] = 0;
-            return `<span>${num[0]}</span> <span>${num[1]}</span>`
+            return `<span>${num[0]}</span> <span>${num[1]}</span>`;
+        }else if (news< 0){
+            num[0] = 0;
+            num[1] = 0;
+            return `<span>${num[0]}</span> <span>${num[1]}</span>`;
         }else{
-            return `<span>${num[0]}</span> <span>${num[1]}</span>`
+            return `<span>${num[0]}</span> <span>${num[1]}</span>`;
         }
     }
-    d.innerHTML = Zero(day);
-    h.innerHTML = Zero(hor);
-    m.innerHTML = Zero(mi);
-    s.innerHTML = Zero(se);
-}
 
-couts ();
+    
+    // Выводим значения на страницу
+    d1.innerHTML = Zero(day);
+    h1.innerHTML = Zero(hor);
+    m1.innerHTML = Zero(mi);
+    s1.innerHTML = Zero(se);
+    
+    start = setTimeout (couts,1000);
+},1000);
 
-setInterval(couts, 1000);
 
 
 

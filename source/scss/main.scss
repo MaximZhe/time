@@ -78,7 +78,17 @@ $cl6:#FDB827;
     width: 100%;
     text-align: center;
 }
-
+%boxTimer{
+    font-size: 24px;
+    width: 28px;
+    height: 50px;
+    line-height: 28px;
+    font-weight: 700;
+    border-radius: 5px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
 .timer{
     display:flex;
     align-items:center;
@@ -141,28 +151,28 @@ $cl6:#FDB827;
 }
 .timers{
     display: flex;
+    flex-direction: column;
     max-width: 320px;
     width: 100%;
     justify-content: space-between;
     margin: 80px auto 0;
-    .timers__block{
+    .timers__info{
+        display: none;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .time{
+        display: flex;
+        max-width: 320px;
+        width: 100%;
+        justify-content: space-between;
+        margin: 20px auto 0;
+       .timers__block{
         position: relative;
         display: flex;
         align-items:center;
         justify-content: space-between;
         width: 70px;
-        span{
-            font-size: 24px;
-            width: 28px;
-            height: 50px;
-            line-height: 28px;
-            font-weight: 700;
-            border:2px solid rgba(9, 255, 0, 0.644);
-            border-radius: 5px;
-            display: flex;
-            align-items:center;
-            justify-content: center;
-        }
         &:nth-child(1):before{
             content:"Дней";
             @extend %titleTinersBlock;
@@ -183,7 +193,33 @@ $cl6:#FDB827;
             @extend %titleTinersBlock;
                    
         }
+        }
+        #d{
+            span{
+                @extend %boxTimer;
+                border:2px solid #ffffff;
+            }
+        }
+        #h{
+            span{
+                @extend %boxTimer;
+                border:2px solid #e5ff00;
+            }
+        }
+        #m{
+            span{
+                @extend %boxTimer;
+                border:2px solid #1100ff;
+            }
+        }
+        #s{
+            span{
+                @extend %boxTimer;
+                border:2px solid #fd0000;
+            }
+        } 
     }
+    
 }
 
 /*Responsive*/

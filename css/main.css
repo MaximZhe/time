@@ -102,7 +102,7 @@ textarea {
 
 /*Цвета*/
 /*Шаблоны */
-.timers .timers__block:nth-child(4):before, .timers .timers__block:nth-child(3):before, .timers .timers__block:nth-child(2):before, .timers .timers__block:nth-child(1):before {
+.timers .time .timers__block:nth-child(4):before, .timers .time .timers__block:nth-child(3):before, .timers .time .timers__block:nth-child(2):before, .timers .time .timers__block:nth-child(1):before {
 		display: block;
 		position: absolute;
 		bottom: -40px;
@@ -110,6 +110,24 @@ textarea {
 		font-size: 20px;
 		width: 100%;
 		text-align: center;
+}
+
+.timers .time #s span, .timers .time #m span, .timers .time #h span, .timers .time #d span {
+		font-size: 24px;
+		width: 28px;
+		height: 50px;
+		line-height: 28px;
+		font-weight: 700;
+		border-radius: 5px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 }
 
 .timer {
@@ -193,6 +211,10 @@ textarea {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
 		max-width: 320px;
 		width: 100%;
 		-webkit-box-pack: justify;
@@ -200,7 +222,23 @@ textarea {
 		        justify-content: space-between;
 		margin: 80px auto 0;
 }
-.timers .timers__block {
+.timers .timers__info {
+		display: none;
+		font-size: 20px;
+		line-height: 24px;
+}
+.timers .time {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		max-width: 320px;
+		width: 100%;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		margin: 20px auto 0;
+}
+.timers .time .timers__block {
 		position: relative;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -213,35 +251,29 @@ textarea {
 		        justify-content: space-between;
 		width: 70px;
 }
-.timers .timers__block span {
-		font-size: 24px;
-		width: 28px;
-		height: 50px;
-		line-height: 28px;
-		font-weight: 700;
-		border: 2px solid rgba(9, 255, 0, 0.644);
-		border-radius: 5px;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-align: center;
-		    -ms-flex-align: center;
-		        align-items: center;
-		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
-}
-.timers .timers__block:nth-child(1):before {
+.timers .time .timers__block:nth-child(1):before {
 		content: "Дней";
 }
-.timers .timers__block:nth-child(2):before {
+.timers .time .timers__block:nth-child(2):before {
 		content: "Часов";
 }
-.timers .timers__block:nth-child(3):before {
+.timers .time .timers__block:nth-child(3):before {
 		content: "Минут";
 }
-.timers .timers__block:nth-child(4):before {
+.timers .time .timers__block:nth-child(4):before {
 		content: "Секунд";
+}
+.timers .time #d span {
+		border: 2px solid #ffffff;
+}
+.timers .time #h span {
+		border: 2px solid #e5ff00;
+}
+.timers .time #m span {
+		border: 2px solid #1100ff;
+}
+.timers .time #s span {
+		border: 2px solid #fd0000;
 }
 
 /*Responsive*/
